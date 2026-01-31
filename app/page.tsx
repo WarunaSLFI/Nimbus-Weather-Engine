@@ -204,16 +204,16 @@ export default function Home() {
       {/* Mobile Header */}
       <div className="lg:hidden flex items-center justify-between p-4 bg-white border-b border-slate-200 sticky top-0 z-40 shadow-sm">
         <div className="flex items-center gap-2">
-          <div className="relative w-8 h-8 overflow-hidden rounded-lg shadow-md">
+          <div className="relative w-10 h-10 overflow-hidden">
             <Image
               src="/logo.png"
               alt="Nimbus Logo"
               fill
-              className="object-cover"
+              className="object-contain"
               priority
             />
           </div>
-          <span className="font-bold text-lg text-slate-900">Nimbus</span>
+          <span className="font-bold text-lg text-slate-900 leading-tight">Nimbus Weather Engine</span>
         </div>
         <button onClick={() => setIsMobileMenuOpen(true)} className="p-2 bg-white rounded-full shadow-sm border border-slate-200 text-slate-600">
           <Menu size={20} />
