@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Image from "next/image";
 import { CloudSun, History, MapPin, X, Sun, Trash2 } from "lucide-react";
 import { City } from "../lib/cities";
 import SearchBox from "./SearchBox";
@@ -22,10 +23,16 @@ export default function Sidebar({ favorites, recent, onSelectCity, onSearch, onR
             <aside className="w-full lg:w-[320px] lg:h-screen lg:fixed lg:left-0 lg:top-0 bg-white border-b lg:border-b-0 lg:border-r border-slate-200 p-6 flex flex-col gap-8 z-20 overflow-visible lg:overflow-y-auto no-scrollbar shadow-sm lg:shadow-none">
                 {/* Logo */}
                 <div className="flex items-center gap-3 px-2">
-                    <div className="p-2 bg-slate-500 rounded-xl text-white shadow-lg shadow-slate-200/20">
-                        <CloudSun size={24} strokeWidth={2.5} />
+                    <div className="relative w-10 h-10 overflow-hidden rounded-xl shadow-lg">
+                        <Image 
+                            src="/logo.png" 
+                            alt="Nimbus Logo" 
+                            fill 
+                            className="object-cover"
+                            priority
+                        />
                     </div>
-                    <h1 className="text-2xl font-semibold text-slate-900 tracking-tight">Weatherly</h1>
+                    <h1 className="text-2xl font-semibold text-slate-900 tracking-tight">Nimbus</h1>
                 </div>
 
                 {/* Search */}

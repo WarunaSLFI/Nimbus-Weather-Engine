@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Weatherly - Premium Forecast",
+  title: "Nimbus Weather - Premium Forecast",
   description: "Advanced weather dashboard.",
 };
 
