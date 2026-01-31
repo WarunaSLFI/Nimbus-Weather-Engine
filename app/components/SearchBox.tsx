@@ -114,7 +114,7 @@ export default function SearchBox({ onSelectCity }: Props) {
                 onKeyDown={handleKeyDown}
                 onFocus={() => setIsOpen(true)}
                 placeholder="Search for cities..." // Changed placeholder text
-                className="w-full bg-slate-100 border border-slate-200 text-slate-900 rounded-2xl py-2.5 pl-12 pr-10 focus:outline-none focus:ring-2 focus:ring-slate-400/20 focus:border-slate-400 transition-all font-medium placeholder:text-slate-400 shadow-sm focus:bg-white"
+                className="w-full bg-slate-100 border border-slate-200 text-slate-900 rounded-2xl py-2.5 pl-12 pr-10 focus:outline-none focus:border-slate-400 transition-all text-lg font-medium placeholder:text-slate-400 shadow-sm focus:bg-white"
             />
 
             {query && (
@@ -127,7 +127,7 @@ export default function SearchBox({ onSelectCity }: Props) {
             )}
 
             {/* Dropdown Results */}
-            {isOpen && (
+            {isOpen && (suggestions.length > 0 || (query.length > 2 && !isLoading)) && (
                 <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-2xl border border-slate-200 shadow-xl shadow-slate-200/50 max-h-[300px] overflow-y-auto no-scrollbar py-2">
                     {suggestions.length > 0 ? (
                         <ul>

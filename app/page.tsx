@@ -131,7 +131,7 @@ export default function Home() {
     const currentProps = {
       city: weather.location.name,
       country: weather.location.country,
-      date: new Date(weather.location.localtime).toLocaleDateString("en-GB", { weekday: 'long', day: 'numeric', month: 'short' }),
+      date: new Date(weather.location.localtime).toLocaleDateString("en-GB", { weekday: 'long', day: 'numeric', month: 'short', year: 'numeric' }),
       temp: unit === 'C' ? weather.current.temp_c : weather.current.temp_f,
       condition: weather.current.conditionText as any, // Component expects strict union, loosen it or fix component
       description: weather.current.conditionText,
@@ -213,7 +213,7 @@ export default function Home() {
               priority
             />
           </div>
-          <span className="font-bold text-lg text-slate-900 leading-tight">Nimbus Weather Engine</span>
+          <span className="font-bold text-2xl text-slate-900">Nimbus</span>
         </div>
         <button onClick={() => setIsMobileMenuOpen(true)} className="p-2 bg-white rounded-full shadow-sm border border-slate-200 text-slate-600">
           <Menu size={20} />

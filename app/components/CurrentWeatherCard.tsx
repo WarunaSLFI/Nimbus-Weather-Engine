@@ -82,7 +82,7 @@ export default function CurrentWeatherCard({ data, iconUrl, isFavorite, onToggle
                         </button>
                     </div>
 
-                    <div className="bg-slate-100/50 px-4 py-2 rounded-lg text-sm font-medium text-slate-800 border border-slate-200 self-start">
+                    <div className="bg-slate-100/50 px-4 py-2 rounded-lg text-xl font-medium text-slate-800 border border-slate-200 self-start">
                         Live Updates
                     </div>
                 </div>

@@ -15,8 +15,8 @@ export default function DailyForecast({ data, unit }: Props) {
                 {data.map((day, idx) => {
                     return (
                         <div key={idx} className="group flex items-center justify-between py-4 border-b border-slate-100 last:border-0 hover:bg-slate-50 px-2 rounded-xl transition-colors cursor-default">
-                            <div className="flex items-center gap-4 w-32">
-                                <span className="text-slate-500 font-medium w-12">{day.dayName}</span>
+                            <div className="flex items-center gap-4 w-40">
+                                <span className="text-slate-600 font-semibold text-lg w-16">{day.dayName}</span>
                                 <div className="flex items-center gap-2">
                                     <img src={`https:${day.conditionIcon}`} alt={day.conditionText} className="w-8 h-8 object-contain" />
                                 </div>
@@ -24,18 +24,18 @@ export default function DailyForecast({ data, unit }: Props) {
 
                             <div className="flex-1 flex items-center justify-center">
                                 {day.chance_of_rain > 0 ? (
-                                    <div className="flex items-center gap-1 text-slate-600 bg-slate-100 px-2 py-1 rounded-lg">
-                                        <CloudRain size={14} />
-                                        <span className="text-sm font-bold">{day.chance_of_rain}%</span>
+                                    <div className="flex items-center gap-1.5 text-slate-700 bg-slate-100 px-3 py-1.5 rounded-xl">
+                                        <CloudRain size={16} />
+                                        <span className="text-base font-bold">{day.chance_of_rain}%</span>
                                     </div>
                                 ) : (
-                                    <span className="text-sm text-slate-400 font-medium">{day.conditionText}</span>
+                                    <span className="text-base text-slate-500 font-semibold">{day.conditionText}</span>
                                 )}
                             </div>
 
-                            <div className="flex items-center gap-4 w-32 justify-end">
-                                <span className="font-bold text-slate-900">{unit === 'C' ? day.max_c : day.max_f}°</span>
-                                <span className="text-slate-400 font-medium">{unit === 'C' ? day.min_c : day.min_f}°</span>
+                            <div className="flex items-center gap-6 w-40 justify-end">
+                                <span className="font-bold text-slate-900 text-xl">{unit === 'C' ? day.max_c : day.max_f}°</span>
+                                <span className="text-slate-400 font-medium text-lg">{unit === 'C' ? day.min_c : day.min_f}°</span>
                             </div>
                         </div>
                     );

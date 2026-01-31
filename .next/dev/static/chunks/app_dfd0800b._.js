@@ -154,7 +154,7 @@ function SearchBox({ onSelectCity }) {
                 onKeyDown: handleKeyDown,
                 onFocus: ()=>setIsOpen(true),
                 placeholder: "Search for cities...",
-                className: "w-full bg-slate-100 border border-slate-200 text-slate-900 rounded-2xl py-2.5 pl-12 pr-10 focus:outline-none focus:ring-2 focus:ring-slate-400/20 focus:border-slate-400 transition-all font-medium placeholder:text-slate-400 shadow-sm focus:bg-white"
+                className: "w-full bg-slate-100 border border-slate-200 text-slate-900 rounded-2xl py-2.5 pl-12 pr-10 focus:outline-none focus:border-slate-400 transition-all text-lg font-medium placeholder:text-slate-400 shadow-sm focus:bg-white"
             }, void 0, false, {
                 fileName: "[project]/app/components/SearchBox.tsx",
                 lineNumber: 110,
@@ -178,7 +178,7 @@ function SearchBox({ onSelectCity }) {
                 lineNumber: 121,
                 columnNumber: 17
             }, this),
-            isOpen && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            isOpen && (suggestions.length > 0 || query.length > 2 && !isLoading) && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "absolute top-full left-0 right-0 mt-2 bg-white rounded-2xl border border-slate-200 shadow-xl shadow-slate-200/50 max-h-[300px] overflow-y-auto no-scrollbar py-2",
                 children: suggestions.length > 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
                     children: suggestions.map((item, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -262,7 +262,7 @@ __turbopack_context__.s([
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$cloud$2d$sun$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__CloudSun$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/cloud-sun.js [app-client] (ecmascript) <export default as CloudSun>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/image.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$history$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__History$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/history.js [app-client] (ecmascript) <export default as History>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$map$2d$pin$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__MapPin$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/map-pin.js [app-client] (ecmascript) <export default as MapPin>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$x$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__X$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/x.js [app-client] (ecmascript) <export default as X>");
@@ -271,6 +271,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$SearchBox$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/components/SearchBox.tsx [app-client] (ecmascript)");
 ;
 var _s = __turbopack_context__.k.signature();
+;
 ;
 ;
 ;
@@ -286,39 +287,42 @@ function Sidebar({ favorites, recent, onSelectCity, onSearch, onRemoveFavorite, 
                         className: "flex items-center gap-3 px-2",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "p-2 bg-slate-500 rounded-xl text-white shadow-lg shadow-slate-200/20",
-                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$cloud$2d$sun$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__CloudSun$3e$__["CloudSun"], {
-                                    size: 24,
-                                    strokeWidth: 2.5
+                                className: "relative w-11 h-11 overflow-hidden",
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                    src: "/logo.png",
+                                    alt: "Nimbus Logo",
+                                    fill: true,
+                                    className: "object-contain",
+                                    priority: true
                                 }, void 0, false, {
                                     fileName: "[project]/app/components/Sidebar.tsx",
-                                    lineNumber: 26,
+                                    lineNumber: 27,
                                     columnNumber: 25
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/components/Sidebar.tsx",
-                                lineNumber: 25,
+                                lineNumber: 26,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                                className: "text-2xl font-semibold text-slate-900 tracking-tight",
-                                children: "Weatherly"
+                                className: "text-3xl font-bold text-slate-900 tracking-tight",
+                                children: "Nimbus"
                             }, void 0, false, {
                                 fileName: "[project]/app/components/Sidebar.tsx",
-                                lineNumber: 28,
+                                lineNumber: 35,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/components/Sidebar.tsx",
-                        lineNumber: 24,
+                        lineNumber: 25,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$SearchBox$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                         onSelectCity: onSearch
                     }, void 0, false, {
                         fileName: "[project]/app/components/Sidebar.tsx",
-                        lineNumber: 32,
+                        lineNumber: 41,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -330,7 +334,7 @@ function Sidebar({ favorites, recent, onSelectCity, onSearch, onRemoveFavorite, 
                                 children: "°C"
                             }, void 0, false, {
                                 fileName: "[project]/app/components/Sidebar.tsx",
-                                lineNumber: 36,
+                                lineNumber: 45,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -339,13 +343,13 @@ function Sidebar({ favorites, recent, onSelectCity, onSearch, onRemoveFavorite, 
                                 children: "°F"
                             }, void 0, false, {
                                 fileName: "[project]/app/components/Sidebar.tsx",
-                                lineNumber: 42,
+                                lineNumber: 51,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/components/Sidebar.tsx",
-                        lineNumber: 35,
+                        lineNumber: 44,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -358,7 +362,7 @@ function Sidebar({ favorites, recent, onSelectCity, onSearch, onRemoveFavorite, 
                                         children: "Favorites"
                                     }, void 0, false, {
                                         fileName: "[project]/app/components/Sidebar.tsx",
-                                        lineNumber: 53,
+                                        lineNumber: 62,
                                         columnNumber: 25
                                     }, this),
                                     favorites.length > 3 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -371,13 +375,13 @@ function Sidebar({ favorites, recent, onSelectCity, onSearch, onRemoveFavorite, 
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/components/Sidebar.tsx",
-                                        lineNumber: 55,
+                                        lineNumber: 64,
                                         columnNumber: 29
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/components/Sidebar.tsx",
-                                lineNumber: 52,
+                                lineNumber: 61,
                                 columnNumber: 21
                             }, this),
                             favorites.length === 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -385,7 +389,7 @@ function Sidebar({ favorites, recent, onSelectCity, onSearch, onRemoveFavorite, 
                                 children: "Search and click star to add favorites"
                             }, void 0, false, {
                                 fileName: "[project]/app/components/Sidebar.tsx",
-                                lineNumber: 62,
+                                lineNumber: 71,
                                 columnNumber: 25
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -404,12 +408,12 @@ function Sidebar({ favorites, recent, onSelectCity, onSearch, onRemoveFavorite, 
                                                             fill: "currentColor"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/components/Sidebar.tsx",
-                                                            lineNumber: 74,
+                                                            lineNumber: 83,
                                                             columnNumber: 41
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/components/Sidebar.tsx",
-                                                        lineNumber: 73,
+                                                        lineNumber: 82,
                                                         columnNumber: 37
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -419,7 +423,7 @@ function Sidebar({ favorites, recent, onSelectCity, onSearch, onRemoveFavorite, 
                                                                 children: fav.name
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/components/Sidebar.tsx",
-                                                                lineNumber: 77,
+                                                                lineNumber: 86,
                                                                 columnNumber: 41
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -427,19 +431,19 @@ function Sidebar({ favorites, recent, onSelectCity, onSearch, onRemoveFavorite, 
                                                                 children: fav.country
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/components/Sidebar.tsx",
-                                                                lineNumber: 78,
+                                                                lineNumber: 87,
                                                                 columnNumber: 41
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/components/Sidebar.tsx",
-                                                        lineNumber: 76,
+                                                        lineNumber: 85,
                                                         columnNumber: 37
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/components/Sidebar.tsx",
-                                                lineNumber: 72,
+                                                lineNumber: 81,
                                                 columnNumber: 33
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -453,29 +457,29 @@ function Sidebar({ favorites, recent, onSelectCity, onSearch, onRemoveFavorite, 
                                                     size: 16
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/components/Sidebar.tsx",
-                                                    lineNumber: 89,
+                                                    lineNumber: 98,
                                                     columnNumber: 37
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/app/components/Sidebar.tsx",
-                                                lineNumber: 81,
+                                                lineNumber: 90,
                                                 columnNumber: 33
                                             }, this)
                                         ]
                                     }, fav.name, true, {
                                         fileName: "[project]/app/components/Sidebar.tsx",
-                                        lineNumber: 67,
+                                        lineNumber: 76,
                                         columnNumber: 29
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/app/components/Sidebar.tsx",
-                                lineNumber: 65,
+                                lineNumber: 74,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/components/Sidebar.tsx",
-                        lineNumber: 51,
+                        lineNumber: 60,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -488,20 +492,20 @@ function Sidebar({ favorites, recent, onSelectCity, onSearch, onRemoveFavorite, 
                                         children: "Recent"
                                     }, void 0, false, {
                                         fileName: "[project]/app/components/Sidebar.tsx",
-                                        lineNumber: 99,
+                                        lineNumber: 108,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$history$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__History$3e$__["History"], {
                                         size: 14
                                     }, void 0, false, {
                                         fileName: "[project]/app/components/Sidebar.tsx",
-                                        lineNumber: 100,
+                                        lineNumber: 109,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/components/Sidebar.tsx",
-                                lineNumber: 98,
+                                lineNumber: 107,
                                 columnNumber: 21
                             }, this),
                             recent.length === 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -509,7 +513,7 @@ function Sidebar({ favorites, recent, onSelectCity, onSearch, onRemoveFavorite, 
                                 children: "No recent searches"
                             }, void 0, false, {
                                 fileName: "[project]/app/components/Sidebar.tsx",
-                                lineNumber: 104,
+                                lineNumber: 113,
                                 columnNumber: 25
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -526,7 +530,7 @@ function Sidebar({ favorites, recent, onSelectCity, onSearch, onRemoveFavorite, 
                                                         className: "text-slate-400 group-hover:text-slate-600"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/components/Sidebar.tsx",
-                                                        lineNumber: 114,
+                                                        lineNumber: 123,
                                                         columnNumber: 37
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -538,13 +542,13 @@ function Sidebar({ favorites, recent, onSelectCity, onSearch, onRemoveFavorite, 
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/components/Sidebar.tsx",
-                                                        lineNumber: 115,
+                                                        lineNumber: 124,
                                                         columnNumber: 37
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/components/Sidebar.tsx",
-                                                lineNumber: 110,
+                                                lineNumber: 119,
                                                 columnNumber: 33
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -558,29 +562,29 @@ function Sidebar({ favorites, recent, onSelectCity, onSearch, onRemoveFavorite, 
                                                     size: 14
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/components/Sidebar.tsx",
-                                                    lineNumber: 125,
+                                                    lineNumber: 134,
                                                     columnNumber: 37
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/app/components/Sidebar.tsx",
-                                                lineNumber: 117,
+                                                lineNumber: 126,
                                                 columnNumber: 33
                                             }, this)
                                         ]
                                     }, item.name, true, {
                                         fileName: "[project]/app/components/Sidebar.tsx",
-                                        lineNumber: 109,
+                                        lineNumber: 118,
                                         columnNumber: 29
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/app/components/Sidebar.tsx",
-                                lineNumber: 107,
+                                lineNumber: 116,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/components/Sidebar.tsx",
-                        lineNumber: 97,
+                        lineNumber: 106,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -593,7 +597,7 @@ function Sidebar({ favorites, recent, onSelectCity, onSearch, onRemoveFavorite, 
                                     children: "Pro Tip:"
                                 }, void 0, false, {
                                     fileName: "[project]/app/components/Sidebar.tsx",
-                                    lineNumber: 135,
+                                    lineNumber: 144,
                                     columnNumber: 25
                                 }, this),
                                 " Press ",
@@ -602,25 +606,25 @@ function Sidebar({ favorites, recent, onSelectCity, onSearch, onRemoveFavorite, 
                                     children: "K"
                                 }, void 0, false, {
                                     fileName: "[project]/app/components/Sidebar.tsx",
-                                    lineNumber: 135,
+                                    lineNumber: 144,
                                     columnNumber: 94
                                 }, this),
                                 " to search anytime."
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/components/Sidebar.tsx",
-                            lineNumber: 134,
+                            lineNumber: 143,
                             columnNumber: 21
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/components/Sidebar.tsx",
-                        lineNumber: 133,
+                        lineNumber: 142,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/components/Sidebar.tsx",
-                lineNumber: 22,
+                lineNumber: 23,
                 columnNumber: 13
             }, this),
             showAllFavorites && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -636,7 +640,7 @@ function Sidebar({ favorites, recent, onSelectCity, onSearch, onRemoveFavorite, 
                                     children: "All Favorites"
                                 }, void 0, false, {
                                     fileName: "[project]/app/components/Sidebar.tsx",
-                                    lineNumber: 145,
+                                    lineNumber: 154,
                                     columnNumber: 29
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -646,18 +650,18 @@ function Sidebar({ favorites, recent, onSelectCity, onSearch, onRemoveFavorite, 
                                         size: 20
                                     }, void 0, false, {
                                         fileName: "[project]/app/components/Sidebar.tsx",
-                                        lineNumber: 147,
+                                        lineNumber: 156,
                                         columnNumber: 33
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/app/components/Sidebar.tsx",
-                                    lineNumber: 146,
+                                    lineNumber: 155,
                                     columnNumber: 29
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/components/Sidebar.tsx",
-                            lineNumber: 144,
+                            lineNumber: 153,
                             columnNumber: 25
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -679,13 +683,13 @@ function Sidebar({ favorites, recent, onSelectCity, onSearch, onRemoveFavorite, 
                                                     children: fav.country
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/components/Sidebar.tsx",
-                                                    lineNumber: 154,
+                                                    lineNumber: 163,
                                                     columnNumber: 53
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/components/Sidebar.tsx",
-                                            lineNumber: 153,
+                                            lineNumber: 162,
                                             columnNumber: 37
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -695,34 +699,34 @@ function Sidebar({ favorites, recent, onSelectCity, onSearch, onRemoveFavorite, 
                                                 size: 16
                                             }, void 0, false, {
                                                 fileName: "[project]/app/components/Sidebar.tsx",
-                                                lineNumber: 157,
+                                                lineNumber: 166,
                                                 columnNumber: 41
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/app/components/Sidebar.tsx",
-                                            lineNumber: 156,
+                                            lineNumber: 165,
                                             columnNumber: 37
                                         }, this)
                                     ]
                                 }, fav.name, true, {
                                     fileName: "[project]/app/components/Sidebar.tsx",
-                                    lineNumber: 152,
+                                    lineNumber: 161,
                                     columnNumber: 33
                                 }, this))
                         }, void 0, false, {
                             fileName: "[project]/app/components/Sidebar.tsx",
-                            lineNumber: 150,
+                            lineNumber: 159,
                             columnNumber: 25
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/components/Sidebar.tsx",
-                    lineNumber: 143,
+                    lineNumber: 152,
                     columnNumber: 21
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/components/Sidebar.tsx",
-                lineNumber: 142,
+                lineNumber: 151,
                 columnNumber: 17
             }, this)
         ]
@@ -1025,7 +1029,7 @@ function CurrentWeatherCard({ data, iconUrl, isFavorite, onToggleFavorite }) {
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "bg-slate-100/50 px-4 py-2 rounded-lg text-sm font-medium text-slate-800 border border-slate-200 self-start",
+                                className: "bg-slate-100/50 px-4 py-2 rounded-lg text-xl font-medium text-slate-800 border border-slate-200 self-start",
                                 children: "Live Updates"
                             }, void 0, false, {
                                 fileName: "[project]/app/components/CurrentWeatherCard.tsx",
@@ -1175,10 +1179,10 @@ function HourlyForecast({ data, unit }) {
                 children: data.map((hour, idx)=>{
                     const temp = unit === 'C' ? hour.temp_c : hour.temp_f;
                     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: `p-2 py-3 rounded-2xl border flex flex-col items-center gap-1 transition-all hover:shadow-lg ${hour.isNow ? "bg-slate-100 text-slate-900 border-slate-200 shadow-sm" : "bg-white border-slate-200 hover:border-slate-300 text-slate-600 hover:bg-slate-50"}`,
+                        className: `p-2 py-1 rounded-2xl border flex flex-col items-center gap-0 transition-all hover:shadow-lg ${hour.isNow ? "bg-slate-100 text-slate-900 border-slate-200 shadow-sm" : "bg-white border-slate-200 hover:border-slate-300 text-slate-600 hover:bg-slate-50"}`,
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                className: `text-sm font-medium text-slate-500`,
+                                className: `text-base font-semibold text-slate-500`,
                                 children: hour.time
                             }, void 0, false, {
                                 fileName: "[project]/app/components/HourlyForecast.tsx",
@@ -1188,14 +1192,14 @@ function HourlyForecast({ data, unit }) {
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
                                 src: `https:${hour.conditionIcon}`,
                                 alt: hour.conditionText,
-                                className: "w-8 h-8 object-contain"
+                                className: "w-10 h-10 object-contain"
                             }, void 0, false, {
                                 fileName: "[project]/app/components/HourlyForecast.tsx",
                                 lineNumber: 28,
                                 columnNumber: 29
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                className: "text-lg font-bold text-slate-900",
+                                className: "text-xl font-bold text-slate-900",
                                 children: [
                                     temp,
                                     "°"
@@ -1204,17 +1208,6 @@ function HourlyForecast({ data, unit }) {
                                 fileName: "[project]/app/components/HourlyForecast.tsx",
                                 lineNumber: 29,
                                 columnNumber: 29
-                            }, this),
-                            hour.chance_of_rain > 20 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                className: "text-xs font-bold text-slate-600",
-                                children: [
-                                    hour.chance_of_rain,
-                                    "% Rain"
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/app/components/HourlyForecast.tsx",
-                                lineNumber: 31,
-                                columnNumber: 33
                             }, this)
                         ]
                     }, idx, true, {
@@ -1272,10 +1265,10 @@ function DailyForecast({ data, unit }) {
                         className: "group flex items-center justify-between py-4 border-b border-slate-100 last:border-0 hover:bg-slate-50 px-2 rounded-xl transition-colors cursor-default",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "flex items-center gap-4 w-32",
+                                className: "flex items-center gap-4 w-40",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: "text-slate-500 font-medium w-12",
+                                        className: "text-slate-600 font-semibold text-lg w-16",
                                         children: day.dayName
                                     }, void 0, false, {
                                         fileName: "[project]/app/components/DailyForecast.tsx",
@@ -1307,17 +1300,17 @@ function DailyForecast({ data, unit }) {
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "flex-1 flex items-center justify-center",
                                 children: day.chance_of_rain > 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "flex items-center gap-1 text-slate-600 bg-slate-100 px-2 py-1 rounded-lg",
+                                    className: "flex items-center gap-1.5 text-slate-700 bg-slate-100 px-3 py-1.5 rounded-xl",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$cloud$2d$rain$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__CloudRain$3e$__["CloudRain"], {
-                                            size: 14
+                                            size: 16
                                         }, void 0, false, {
                                             fileName: "[project]/app/components/DailyForecast.tsx",
                                             lineNumber: 28,
                                             columnNumber: 41
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                            className: "text-sm font-bold",
+                                            className: "text-base font-bold",
                                             children: [
                                                 day.chance_of_rain,
                                                 "%"
@@ -1333,7 +1326,7 @@ function DailyForecast({ data, unit }) {
                                     lineNumber: 27,
                                     columnNumber: 37
                                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                    className: "text-sm text-slate-400 font-medium",
+                                    className: "text-base text-slate-500 font-semibold",
                                     children: day.conditionText
                                 }, void 0, false, {
                                     fileName: "[project]/app/components/DailyForecast.tsx",
@@ -1346,10 +1339,10 @@ function DailyForecast({ data, unit }) {
                                 columnNumber: 29
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "flex items-center gap-4 w-32 justify-end",
+                                className: "flex items-center gap-6 w-40 justify-end",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: "font-bold text-slate-900",
+                                        className: "font-bold text-slate-900 text-xl",
                                         children: [
                                             unit === 'C' ? day.max_c : day.max_f,
                                             "°"
@@ -1360,7 +1353,7 @@ function DailyForecast({ data, unit }) {
                                         columnNumber: 33
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: "text-slate-400 font-medium",
+                                        className: "text-slate-400 font-medium text-lg",
                                         children: [
                                             unit === 'C' ? day.min_c : day.min_f,
                                             "°"
@@ -1912,7 +1905,7 @@ __turbopack_context__.s([
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$cloud$2d$sun$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__CloudSun$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/cloud-sun.js [app-client] (ecmascript) <export default as CloudSun>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/image.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$menu$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Menu$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/menu.js [app-client] (ecmascript) <export default as Menu>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$loader$2d$circle$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Loader2$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/loader-circle.js [app-client] (ecmascript) <export default as Loader2>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$x$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__X$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/x.js [app-client] (ecmascript) <export default as X>");
@@ -1926,6 +1919,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$lib$2f$storage$2e$ts_
 ;
 var _s = __turbopack_context__.k.signature();
 "use client";
+;
 ;
 ;
 ;
@@ -2025,7 +2019,7 @@ function Home() {
                         className: "text-blue-500 animate-spin"
                     }, void 0, false, {
                         fileName: "[project]/app/page.tsx",
-                        lineNumber: 106,
+                        lineNumber: 107,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2033,13 +2027,13 @@ function Home() {
                         children: "Loading forecast..."
                     }, void 0, false, {
                         fileName: "[project]/app/page.tsx",
-                        lineNumber: 107,
+                        lineNumber: 108,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/page.tsx",
-                lineNumber: 105,
+                lineNumber: 106,
                 columnNumber: 9
             }, this);
         }
@@ -2052,7 +2046,7 @@ function Home() {
                         children: error
                     }, void 0, false, {
                         fileName: "[project]/app/page.tsx",
-                        lineNumber: 115,
+                        lineNumber: 116,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2061,13 +2055,13 @@ function Home() {
                         children: "Try Default"
                     }, void 0, false, {
                         fileName: "[project]/app/page.tsx",
-                        lineNumber: 116,
+                        lineNumber: 117,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/page.tsx",
-                lineNumber: 114,
+                lineNumber: 115,
                 columnNumber: 9
             }, this);
         }
@@ -2084,7 +2078,8 @@ function Home() {
             date: new Date(weather.location.localtime).toLocaleDateString("en-GB", {
                 weekday: 'long',
                 day: 'numeric',
-                month: 'short'
+                month: 'short',
+                year: 'numeric'
             }),
             temp: unit === 'C' ? weather.current.temp_c : weather.current.temp_f,
             condition: weather.current.conditionText,
@@ -2112,7 +2107,7 @@ function Home() {
                                 iconUrl: weather.current.conditionIcon
                             }, void 0, false, {
                                 fileName: "[project]/app/page.tsx",
-                                lineNumber: 155,
+                                lineNumber: 156,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$HourlyForecast$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -2120,7 +2115,7 @@ function Home() {
                                 unit: unit
                             }, void 0, false, {
                                 fileName: "[project]/app/page.tsx",
-                                lineNumber: 161,
+                                lineNumber: 162,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$DailyForecast$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -2128,13 +2123,13 @@ function Home() {
                                 unit: unit
                             }, void 0, false, {
                                 fileName: "[project]/app/page.tsx",
-                                lineNumber: 162,
+                                lineNumber: 163,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/page.tsx",
-                        lineNumber: 154,
+                        lineNumber: 155,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2145,7 +2140,7 @@ function Home() {
                                 unit: unit
                             }, void 0, false, {
                                 fileName: "[project]/app/page.tsx",
-                                lineNumber: 167,
+                                lineNumber: 168,
                                 columnNumber: 13
                             }, this),
                             weather.extraDetails && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$ExtraDetailsGrid$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -2153,24 +2148,24 @@ function Home() {
                                 unit: unit
                             }, void 0, false, {
                                 fileName: "[project]/app/page.tsx",
-                                lineNumber: 168,
+                                lineNumber: 169,
                                 columnNumber: 38
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/page.tsx",
-                        lineNumber: 166,
+                        lineNumber: 167,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/page.tsx",
-                lineNumber: 152,
+                lineNumber: 153,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/app/page.tsx",
-            lineNumber: 151,
+            lineNumber: 152,
             columnNumber: 7
         }, this);
     };
@@ -2187,17 +2182,17 @@ function Home() {
                             className: "p-2 bg-white border border-slate-200 rounded-full text-slate-600 shadow-sm",
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$x$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__X$3e$__["X"], {}, void 0, false, {
                                 fileName: "[project]/app/page.tsx",
-                                lineNumber: 180,
+                                lineNumber: 181,
                                 columnNumber: 149
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/app/page.tsx",
-                            lineNumber: 180,
+                            lineNumber: 181,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/page.tsx",
-                        lineNumber: 179,
+                        lineNumber: 180,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$Sidebar$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -2220,13 +2215,13 @@ function Home() {
                         setUnit: setUnit
                     }, void 0, false, {
                         fileName: "[project]/app/page.tsx",
-                        lineNumber: 182,
+                        lineNumber: 183,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/page.tsx",
-                lineNumber: 178,
+                lineNumber: 179,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2236,31 +2231,35 @@ function Home() {
                         className: "flex items-center gap-2",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "p-1.5 bg-slate-500 rounded-lg text-white",
-                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$cloud$2d$sun$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__CloudSun$3e$__["CloudSun"], {
-                                    size: 20
+                                className: "relative w-10 h-10 overflow-hidden",
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                    src: "/logo.png",
+                                    alt: "Nimbus Logo",
+                                    fill: true,
+                                    className: "object-contain",
+                                    priority: true
                                 }, void 0, false, {
                                     fileName: "[project]/app/page.tsx",
-                                    lineNumber: 207,
+                                    lineNumber: 208,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/page.tsx",
-                                lineNumber: 206,
+                                lineNumber: 207,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                className: "font-bold text-lg text-slate-900",
-                                children: "Weatherly"
+                                className: "font-bold text-2xl text-slate-900",
+                                children: "Nimbus"
                             }, void 0, false, {
                                 fileName: "[project]/app/page.tsx",
-                                lineNumber: 209,
+                                lineNumber: 216,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/page.tsx",
-                        lineNumber: 205,
+                        lineNumber: 206,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2270,18 +2269,18 @@ function Home() {
                             size: 20
                         }, void 0, false, {
                             fileName: "[project]/app/page.tsx",
-                            lineNumber: 212,
+                            lineNumber: 219,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/page.tsx",
-                        lineNumber: 211,
+                        lineNumber: 218,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/page.tsx",
-                lineNumber: 204,
+                lineNumber: 205,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
@@ -2299,24 +2298,24 @@ function Home() {
                             children: "Powered by WeatherAPI.com"
                         }, void 0, false, {
                             fileName: "[project]/app/page.tsx",
-                            lineNumber: 222,
+                            lineNumber: 229,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/page.tsx",
-                        lineNumber: 221,
+                        lineNumber: 228,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/page.tsx",
-                lineNumber: 217,
+                lineNumber: 224,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/page.tsx",
-        lineNumber: 176,
+        lineNumber: 177,
         columnNumber: 5
     }, this);
 }

@@ -12,7 +12,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 ;
 ;
 const metadata = {
-    title: "Weatherly - Premium Forecast",
+    title: "Nimbus Weather - Premium Forecast",
     description: "Advanced weather dashboard."
 };
 function RootLayout({ children }) {

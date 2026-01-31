@@ -19,17 +19,14 @@ export default function HourlyForecast({ data, unit }: Props) {
                     return (
                         <div
                             key={idx}
-                            className={`p-2 py-3 rounded-2xl border flex flex-col items-center gap-1 transition-all hover:shadow-lg ${hour.isNow
+                            className={`p-2 py-1 rounded-2xl border flex flex-col items-center gap-0 transition-all hover:shadow-lg ${hour.isNow
                                 ? "bg-slate-100 text-slate-900 border-slate-200 shadow-sm"
                                 : "bg-white border-slate-200 hover:border-slate-300 text-slate-600 hover:bg-slate-50"
                                 }`}
                         >
-                            <span className={`text-sm font-medium text-slate-500`}>{hour.time}</span>
-                            <img src={`https:${hour.conditionIcon}`} alt={hour.conditionText} className="w-8 h-8 object-contain" />
-                            <span className="text-lg font-bold text-slate-900">{temp}°</span>
-                            {hour.chance_of_rain > 20 && (
-                                <span className="text-xs font-bold text-slate-600">{hour.chance_of_rain}% Rain</span>
-                            )}
+                            <span className={`text-base font-semibold text-slate-500`}>{hour.time}</span>
+                            <img src={`https:${hour.conditionIcon}`} alt={hour.conditionText} className="w-10 h-10 object-contain" />
+                            <span className="text-xl font-bold text-slate-900">{temp}°</span>
                         </div>
                     );
                 })}
