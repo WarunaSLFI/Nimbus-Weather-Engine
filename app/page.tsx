@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import { CloudSun, Menu, Loader2, X } from "lucide-react";
 import Sidebar from "./components/Sidebar";
 import CurrentWeatherCard from "./components/CurrentWeatherCard";
@@ -203,10 +204,16 @@ export default function Home() {
       {/* Mobile Header */}
       <div className="lg:hidden flex items-center justify-between p-4 bg-white border-b border-slate-200 sticky top-0 z-40 shadow-sm">
         <div className="flex items-center gap-2">
-          <div className="p-1.5 bg-slate-500 rounded-lg text-white">
-            <CloudSun size={20} />
+          <div className="relative w-8 h-8 overflow-hidden rounded-lg shadow-md">
+            <Image
+              src="/logo.png"
+              alt="Nimbus Logo"
+              fill
+              className="object-cover"
+              priority
+            />
           </div>
-          <span className="font-bold text-lg text-slate-900">Weatherly</span>
+          <span className="font-bold text-lg text-slate-900">Nimbus</span>
         </div>
         <button onClick={() => setIsMobileMenuOpen(true)} className="p-2 bg-white rounded-full shadow-sm border border-slate-200 text-slate-600">
           <Menu size={20} />
