@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Lato', ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-900 antialiased;
+    font-family: 'Lato', sans-serif !important;
+  }
+
+  /* Force everything to use Lato */
+  * {
+    font-family: 'Lato', sans-serif !important;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+
+  /* Glassmorphism utility - Light */
+  .glass-panel {
+    @apply bg-white border border-slate-200 shadow-sm;
+  }
+}
+
+/* Weather Animations */
+@keyframes fall {
+  from {
+    transform: translateY(-50px);
+  }
+
+  to {
+    transform: translateY(450px);
+  }
+}
+
+@keyframes snow {
+  0% {
+    transform: translateY(-20px) translateX(0);
+  }
+
+  25% {
+    transform: translateY(100px) translateX(15px);
+  }
+
+  50% {
+    transform: translateY(220px) translateX(-15px);
+  }
+
+  75% {
+    transform: translateY(340px) translateX(15px);
+  }
+
+  100% {
+    transform: translateY(450px) translateX(0);
+  }
+}
+
+@keyframes drift {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-33%);
+  }
+}
+
+@keyframes flash {
+
+  0%,
+  92%,
+  100% {
+    opacity: 0;
+  }
+
+  93% {
+    opacity: 0.2;
+  }
+
+  94% {
+    opacity: 0;
+  }
+
+  96% {
+    opacity: 0.2;
+  }
+
+  97% {
+    opacity: 0;
+  }
+}
