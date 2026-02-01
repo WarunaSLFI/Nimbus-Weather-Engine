@@ -1,3 +1,0 @@
-module.exports=[33290,a=>{"use strict";var b=a.i(7997);function c({children:a}){return(0,b.jsxs)("html",{lang:"en",children:[(0,b.jsxs)("head",{children:[(0,b.jsx)("link",{rel:"preconnect",href:"https://fonts.googleapis.com"}),(0,b.jsx)("link",{rel:"preconnect",href:"https://fonts.gstatic.com",crossOrigin:"anonymous"}),(0,b.jsx)("link",{href:"https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap",rel:"stylesheet"})]}),(0,b.jsx)("body",{className:"antialiased",children:a})]})}a.s(["default",()=>c,"metadata",0,{title:"Weatherly - Premium Forecast",description:"Advanced weather dashboard."}])}];
-
-//# sourceMappingURL=app_layout_tsx_271801d7._.js.map

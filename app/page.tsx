@@ -198,20 +198,23 @@ export default function Home() {
           }}
           unit={unit}
           setUnit={setUnit}
+          weatherIcon={weather?.current.conditionIcon}
         />
       </div>
 
       {/* Mobile Header */}
       <div className="lg:hidden flex items-center justify-between p-4 bg-white border-b border-slate-200 sticky top-0 z-40 shadow-sm">
         <div className="flex items-center gap-2">
-          <div className="relative w-10 h-10 overflow-hidden">
-            <Image
-              src="/logo.png"
-              alt="Nimbus Logo"
-              fill
-              className="object-contain"
-              priority
-            />
+          <div className="relative w-10 h-10 flex items-center justify-center">
+            {weather?.current?.conditionIcon ? (
+              <img
+                src={weather.current.conditionIcon.startsWith("//") ? `https:${weather.current.conditionIcon}` : weather.current.conditionIcon}
+                alt="Nimbus Logo"
+                className="w-full h-full object-contain"
+              />
+            ) : (
+              <CloudSun size={32} className="text-blue-500" />
+            )}
           </div>
           <span className="font-bold text-2xl text-slate-900">Nimbus</span>
         </div>

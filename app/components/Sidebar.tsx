@@ -13,9 +13,10 @@ interface Props {
     onRemoveRecent: (city: City) => void;
     unit: 'C' | 'F';
     setUnit: (unit: 'C' | 'F') => void;
+    weatherIcon?: string;
 }
 
-export default function Sidebar({ favorites, recent, onSelectCity, onSearch, onRemoveFavorite, onRemoveRecent, unit, setUnit }: Props) {
+export default function Sidebar({ favorites, recent, onSelectCity, onSearch, onRemoveFavorite, onRemoveRecent, unit, setUnit, weatherIcon }: Props) {
     const [showAllFavorites, setShowAllFavorites] = useState(false);
 
     return (
@@ -23,14 +24,16 @@ export default function Sidebar({ favorites, recent, onSelectCity, onSearch, onR
             <aside className="w-full lg:w-[320px] lg:h-screen lg:fixed lg:left-0 lg:top-0 bg-white border-b lg:border-b-0 lg:border-r border-slate-200 p-6 flex flex-col gap-8 z-20 overflow-visible lg:overflow-y-auto no-scrollbar shadow-sm lg:shadow-none">
                 {/* Logo */}
                 <div className="flex items-center gap-3 px-2">
-                    <div className="relative w-11 h-11 overflow-hidden">
-                        <Image
-                            src="/logo.png"
-                            alt="Nimbus Logo"
-                            fill
-                            className="object-contain"
-                            priority
-                        />
+                    <div className="relative w-12 h-12 flex items-center justify-center">
+                        {weatherIcon ? (
+                            <img
+                                src={weatherIcon.startsWith("//") ? `https:${weatherIcon}` : weatherIcon}
+                                alt="Current Weather"
+                                className="w-full h-full object-contain drop-shadow-sm"
+                            />
+                        ) : (
+                            <CloudSun size={36} className="text-blue-500" />
+                        )}
                     </div>
                     <h1 className="text-3xl font-bold text-slate-900 tracking-tight">
                         Nimbus
@@ -79,12 +82,11 @@ export default function Sidebar({ favorites, recent, onSelectCity, onSearch, onR
                                 className="relative flex items-center justify-between bg-slate-50 hover:bg-white hover:border-blue-500/50 px-4 py-1.5 rounded-2xl border border-slate-200 transition-all group cursor-pointer shadow-sm hover:shadow-md"
                             >
                                 <div className="flex items-center gap-3">
-                                    <div className="bg-white border border-slate-200 p-2 rounded-full text-yellow-500 group-hover:text-yellow-400 transition-colors shadow-sm">
-                                        <Sun size={16} fill="currentColor" />
-                                    </div>
-                                    <div>
-                                        <div className="text-lg font-semibold text-slate-900 group-hover:text-slate-800 transition-colors">{fav.name}</div>
-                                        <div className="text-base text-slate-500 font-medium group-hover:text-slate-600">{fav.country}</div>
+
+                                    <div className="min-w-0">
+                                        <span className="text-lg font-medium text-slate-900 group-hover:text-slate-800 transition-colors truncate block">
+                                            {fav.name}, {fav.country}
+                                        </span>
                                     </div>
                                 </div>
                                 <button
@@ -118,10 +120,10 @@ export default function Sidebar({ favorites, recent, onSelectCity, onSearch, onR
                             <li key={item.name} className="group relative flex items-center">
                                 <button
                                     onClick={() => onSelectCity(item)}
-                                    className="w-full flex items-center gap-3 px-4 py-1 text-slate-500 hover:bg-slate-50 hover:text-slate-900 rounded-xl transition-colors text-base font-medium"
+                                    className="w-full flex items-center gap-3 px-4 py-2 text-slate-900 hover:bg-slate-50 rounded-xl transition-colors"
                                 >
-                                    <MapPin size={16} className="text-slate-400 group-hover:text-slate-600" />
-                                    <span className="truncate flex-1 text-left">{item.name}, {item.country}</span>
+                                    <MapPin size={18} className="text-slate-400 group-hover:text-slate-600 shrink-0" />
+                                    <span className="truncate flex-1 text-left text-lg font-medium">{item.name}, {item.country}</span>
                                 </button>
                                 <button
                                     onClick={(e) => {
