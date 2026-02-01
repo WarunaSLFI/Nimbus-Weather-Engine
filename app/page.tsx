@@ -152,7 +152,7 @@ export default function Home() {
       <div>
         <div className="grid grid-cols-12 gap-8 animate-in fade-in duration-500">
           {/* Left Column */}
-          <div className="col-span-12 xl:col-span-8 flex flex-col gap-8">
+          <div className="col-span-12 xl:col-span-8 flex flex-col gap-4">
             <CurrentWeatherCard
               data={currentProps as any}
               isFavorite={isCurrentFavorite}
@@ -224,7 +224,7 @@ export default function Home() {
       </div>
 
       {/* Main Content Area */}
-      <main className="lg:ml-[320px] min-h-screen p-4 md:p-8 lg:p-12 max-w-[1600px] mx-auto flex flex-col">
+      <main className="lg:ml-[320px] min-h-screen p-4 md:p-6 lg:p-6 max-w-[1600px] mx-auto flex flex-col">
         {renderContent()}
 
         {/* Credit */}
