@@ -4,6 +4,8 @@ Nimbus Weather Engine is a premium, modern, and highly interactive weather dashb
 
 🚀 **Live Demo:** [https://nimbus-weather-engine.vercel.app/](https://nimbus-weather-engine.vercel.app/)
 
+![Nimbus Weather Engine Screenshot](public/screenshot.png)
+
 ---
 
 ## ✨ Features
