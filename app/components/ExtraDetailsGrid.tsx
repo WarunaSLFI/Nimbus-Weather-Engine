@@ -29,14 +29,14 @@ export default function ExtraDetailsGrid({ data, unit }: Props) {
     }
 
     return (
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 xl:grid-cols-2 gap-4">
             {items.map((detail, idx) => {
                 const Icon = detail.icon;
                 return (
-                    <div key={idx} className={`bg-white border border-slate-200 shadow-sm p-5 rounded-3xl flex flex-col justify-between gap-2 hover:bg-slate-50 transition-colors h-24 ${detail.span ? "col-span-2" : ""}`}>
-                        <div className="flex items-center justify-between text-slate-500">
-                            <span className="text-xs font-semibold uppercase tracking-wider">{detail.label}</span>
-                            <Icon size={18} className="text-slate-400" />
+                    <div key={idx} className={`bg-white border border-slate-200 shadow-sm p-4 rounded-3xl flex flex-col justify-between hover:bg-slate-50 transition-colors h-20 ${detail.span ? "col-span-2" : ""}`}>
+                        <div className="flex items-start justify-between text-slate-500">
+                            <span className="text-sm font-semibold uppercase tracking-wider text-slate-600">{detail.label}</span>
+                            <Icon size={16} className="text-slate-400 mt-0.5" />
                         </div>
                         <div className="text-xl font-semibold text-slate-900 truncate" title={detail.value}>{detail.value}</div>
                     </div>

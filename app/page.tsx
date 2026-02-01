@@ -229,7 +229,7 @@ export default function Home() {
 
         {/* Credit */}
         <div className="mt-auto pt-8 text-center md:text-right">
-          <a href="https://www.weatherapi.com/" title="Free Weather API" target="_blank" rel="noreferrer" className="text-[10px] text-slate-400 hover:text-slate-600 uppercase tracking-widest font-bold">
+          <a href="https://www.weatherapi.com/" title="Free Weather API" target="_blank" rel="noreferrer" className="text-sm text-slate-400 hover:text-slate-600 uppercase tracking-widest font-bold">
             Powered by WeatherAPI.com
           </a>
         </div>
