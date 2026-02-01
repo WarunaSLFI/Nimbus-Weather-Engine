@@ -150,7 +150,7 @@ export default function Home() {
 
     return (
       <div>
-        <div className="grid grid-cols-12 gap-8 animate-in fade-in duration-500">
+        <div className="grid grid-cols-12 gap-6 animate-in fade-in duration-500">
           {/* Left Column */}
           <div className="col-span-12 xl:col-span-8 flex flex-col gap-4">
             <CurrentWeatherCard
